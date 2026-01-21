@@ -208,3 +208,45 @@ h2{margin:0 0 12px}
   color:var(--muted);
   padding:10px 2px 24px;
 }
+/* Hero row inside main content */
+.heroRow{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:18px;
+  align-items:center;
+}
+
+@media (max-width: 900px){
+  .heroRow{grid-template-columns:1fr}
+}
+
+.heroTitle{
+  margin:0;
+  font-size:34px;
+}
+
+.heroSubtitle{
+  margin:10px 0 0;
+  color:var(--muted);
+}
+
+.heroCtas{
+  margin-top:14px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.heroImageWrap{
+  display:flex;
+  justify-content:center;
+}
+
+.heroPhoto{
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px solid var(--border);
+  box-shadow: var(--shadow);
+}
