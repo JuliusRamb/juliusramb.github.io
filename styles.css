@@ -96,13 +96,6 @@ a:hover{text-decoration:underline}
   flex: 0 0 22px;
 }
 
-.sidebarLinks{
-  margin-top:14px;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
 .btn{
   display:inline-block;
   padding:10px 12px;
