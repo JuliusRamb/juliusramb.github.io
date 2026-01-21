@@ -244,3 +244,11 @@ h2{margin:0 0 12px}
   border:1px solid var(--border);
   box-shadow: var(--shadow);
 }
+
+.iconLogo{
+  width:18px;
+  height:18px;
+  object-fit:contain;
+  display:block;
+}
+
