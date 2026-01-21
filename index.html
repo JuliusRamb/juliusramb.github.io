@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name</title>
+  <meta name="description" content="Homepage of Your Name" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Your Name</h1>
+    <p class="tagline">Short value proposition. What you do and for whom.</p>
+    <nav class="nav">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+      <ul class="list">
+        <li>
+          <a href="https://github.com/USERNAME/project-1">Project 1</a>
+          <span class="muted">One-line description.</span>
+        </li>
+        <li>
+          <a href="https://github.com/USERNAME/project-2">Project 2</a>
+          <span class="muted">One-line description.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>
+        Write 3 to 5 sentences about what you build, your focus, and what you are exploring.
+      </p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>
+        <a href="mailto:you@domain.com">you@domain.com</a>
+        <span class="muted"> · </span>
+        <a href="https://www.linkedin.com/in/YOURHANDLE/">LinkedIn</a>
+        <span class="muted"> · </span>
+        <a href="https://github.com/USERNAME">GitHub</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <small>© <span id="y"></span> Your Name</small>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
