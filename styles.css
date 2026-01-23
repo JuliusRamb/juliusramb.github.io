@@ -285,3 +285,20 @@ body{
   position: relative;
   z-index: 1;
 }
+
+.welcomeCard{
+  text-align: center;
+}
+
+.welcomeText{
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.welcomeText span{
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
