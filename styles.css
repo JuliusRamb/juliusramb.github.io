@@ -302,3 +302,13 @@ body{
   transform: translateY(40px);
 }
 
+.btnReadMore{
+  margin-top: 12px;
+  display: inline-block;
+}
+
+.magnet{
+  position: relative;
+  display: inline-block;
+}
+
