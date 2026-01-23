@@ -262,3 +262,26 @@ html{ background: var(--bg); }
   pointer-events: none;
 }
 
+html { background: var(--bg); }
+
+body{
+  margin:0;
+  background: transparent;
+  position: relative;
+}
+
+/* Silk shader background: alltid bakom allt */
+#silk-bg{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Allt innehåll ovanpå canvas */
+.layout{
+  position: relative;
+  z-index: 1;
+}
