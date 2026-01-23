@@ -312,3 +312,43 @@ body{
   display: inline-block;
 }
 
+.statsGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 900px){
+  .statsGrid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(255,255,255,.03);
+}
+
+.statLabel{
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.statValue{
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.statSuffix{
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 600;
+}
