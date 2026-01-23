@@ -1,5 +1,4 @@
 function formatNumber(value) {
-  // heltal räcker för dina siffror
   return Math.round(value).toString();
 }
 
@@ -9,7 +8,7 @@ function animateCountUp(el, { from, to, durationSec }) {
 
   function frame(now) {
     const t = Math.min(1, (now - start) / durationMs);
-    // easeOutCubic (nära "power3.out"-känsla)
+    // easeOutCubic
     const eased = 1 - Math.pow(1 - t, 3);
 
     const current = from + (to - from) * eased;
@@ -18,7 +17,6 @@ function animateCountUp(el, { from, to, durationSec }) {
     if (t < 1) requestAnimationFrame(frame);
   }
 
-  el.textContent = formatNumber(from);
   requestAnimationFrame(frame);
 }
 
@@ -28,12 +26,18 @@ function setupCountUps() {
 
   const seen = new WeakSet();
 
+  // Sätt initialt värde direkt så det aldrig är tomt
+  els.forEach(el => {
+    const from = Number(el.dataset.from ?? 0);
+    el.textContent = formatNumber(from);
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
+
       const el = entry.target;
       if (seen.has(el)) return;
-
       seen.add(el);
 
       const to = Number(el.dataset.to ?? 0);
@@ -42,9 +46,14 @@ function setupCountUps() {
 
       animateCountUp(el, { from, to, durationSec });
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.35 });
 
   els.forEach(el => observer.observe(el));
 }
 
-document.addEventListener('DOMContentLoaded', setupCountUps);
+// Kör direkt om DOM redan är klar, annars vänta
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupCountUps);
+} else {
+  setupCountUps();
+}
