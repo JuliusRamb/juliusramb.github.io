@@ -116,3 +116,26 @@ function animate(now) {
   requestAnimationFrame(animate);
 }
 requestAnimationFrame(animate);
+
+const textEl = document.getElementById('welcome-text');
+
+if (textEl) {
+  const text = textEl.textContent;
+  textEl.textContent = '';
+
+  [...text].forEach((char, index) => {
+    const span = document.createElement('span');
+    span.textContent = char === ' ' ? '\u00A0' : char;
+    span.style.transition = 'opacity 1.25s ease, transform 1.25s ease';
+    span.style.transitionDelay = `${index * 50}ms`;
+    textEl.appendChild(span);
+  });
+
+  requestAnimationFrame(() => {
+    const spans = textEl.querySelectorAll('span');
+    spans.forEach(span => {
+      span.style.opacity = 1;
+      span.style.transform = 'translateY(0)';
+    });
+  });
+}
