@@ -68,8 +68,8 @@ function hexToRgb01(hex) {
 const SETTINGS = {
   speed: 5,
   scale: 1,
-  color: '#7B7481',
-  noiseIntensity: 1.5,
+  color: '#4338ca',
+  noiseIntensity: 1.2,
   rotation: 0
 };
 
