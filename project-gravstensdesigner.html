@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gravstensdesigner, Julius Ramb</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <canvas id="silk-bg" aria-hidden="true"></canvas>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="sidebarInner">
+          <a class="btn btnGhost" href="./index.html">&larr; Back</a>
+
+          <div style="height: 16px"></div>
+
+          <div class="sectionLabel">Veyla AB</div>
+          <h1 class="name" style="font-size: 22px; margin-top: 8px;">Gravstensdesigner</h1>
+          <p class="tagline">gravstensdesigner.se</p>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section class="card reveal">
+          <h2 style="margin: 0;">Gravstensdesigner</h2>
+        </section>
+
+        <section class="card reveal">
+          <div class="statsGrid">
+            <div class="stat">
+              <div class="statLabel">Stone types</div>
+              <div class="statValue">
+                <span class="countup" data-to="3" data-from="0" data-duration="1.5"></span>
+              </div>
+            </div>
+
+            <div class="stat">
+              <div class="statLabel">Granite textures</div>
+              <div class="statValue">
+                <span class="countup" data-to="40" data-from="0" data-duration="2"></span>
+                <span class="statSuffix">+</span>
+              </div>
+            </div>
+
+            <div class="stat">
+              <div class="statLabel">Edge functions</div>
+              <div class="statValue">
+                <span class="countup" data-to="5" data-from="0" data-duration="1.5"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card reveal">
+          <h3 style="margin-top: 0;">
+            Building a multi tenant 3D configurator for Swedish memorial stone retailers
+          </h3>
+
+          <p>
+            Gravstensdesigner is a SaaS platform I built from scratch under Veyla AB. It gives Swedish stonemason companies (stenhuggeri) a modern tool where their customers can design a gravestone in the browser, preview it in real time, and submit an order directly.
+          </p>
+
+          <p>
+            The core of the product is a Three.js powered 3D configurator where end customers choose a stone shape, select material and finish, add text with custom fonts and colors, place decorations, and see everything update live. When they are happy with the design they fill in their details and send a request to the stonemason, including a snapshot of the stone, all configuration details, and any attachments.
+          </p>
+
+          <p>
+            The platform supports three different stone types. Stenbyggare are configurable rectangular stones built with BoxGeometry where the admin sets dimensions, textures, and finishes per face. Profilstenar are organic shaped stones using ExtrudeGeometry from SVG paths, where an admin can paste an SVG path from Figma and instantly get a 3D stone. Färdiga stenar are pre made 3D models generated from uploaded photos using Meshy AI.
+          </p>
+
+          <p>
+            On the admin side, stonemason companies manage their entire product catalog. They control which stones, textures, and options are available to their customers. There is a unified stone management view with drag and drop reordering, a centralized granite texture bank, per client symbol categories for decorations, and per stone pricing with adjustable base prices and surcharges for size, material, and finish.
+          </p>
+
+          <p>
+            I processed over 40 real granite textures through a custom image quilting pipeline in Python to create seamless 2048x2048 textures, flattening lighting gradients so they tile correctly on 3D geometry.
+          </p>
+
+          <p>
+            The decoration system supports manual uploads, AI generated decorations using OpenAI gpt-image-1 with transparent backgrounds, and a classic symbol library that is database backed and organized per client with categories. AI generation runs three sequential edge function calls with a real time progress bar.
+          </p>
+
+          <p>
+            The tech stack is React 18, TypeScript, Vite, and Tailwind on the frontend, with Three.js for all 3D rendering. The backend runs on Supabase with five edge functions handling things like order emails through Resend, AI decoration generation, and 3D model generation through Meshy. Hosting is on Vercel with analytics built in.
+          </p>
+
+          <p>
+            The platform is multi tenant from day one. Each stonemason company gets their own branded experience under a unique URL slug. Their logo is clickable, their stone catalog is fully customized, and all orders go to their notification email.
+          </p>
+
+          <p>
+            I built the entire product solo, handling everything from the 3D rendering and shader work to the admin panel, the order flow, the email templates, the AI integrations, and the texture processing pipeline.
+          </p>
+        </section>
+
+        <section class="card reveal">
+          <div class="sectionLabel">Tech stack</div>
+          <h3 style="margin-top: 0;">Built with</h3>
+          <div class="statsGrid" style="margin-top: 14px;">
+            <div class="stat">
+              <div class="statLabel">Frontend</div>
+              <div style="color: var(--text2); font-size: 14px; font-weight: 500;">React, TypeScript, Vite, Tailwind, Three.js</div>
+            </div>
+            <div class="stat">
+              <div class="statLabel">Backend</div>
+              <div style="color: var(--text2); font-size: 14px; font-weight: 500;">Supabase, Deno edge functions, Resend</div>
+            </div>
+            <div class="stat">
+              <div class="statLabel">AI and 3D</div>
+              <div style="color: var(--text2); font-size: 14px; font-weight: 500;">OpenAI gpt-image-1, Meshy v6, Three.js shaders</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./silk-bg.js"></script>
+    <script type="module" src="./countup.js"></script>
+    <script src="./reveal.js"></script>
+  </body>
+</html>

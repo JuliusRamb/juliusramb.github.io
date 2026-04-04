@@ -1,9 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(32px) }
-  to   { opacity: 1; transform: translateY(0) }
-}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @keyframes shimmer {
   0%   { background-position: -200% center }
@@ -11,7 +6,7 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: .6 }
+  0%, 100% { opacity: .5 }
   50%      { opacity: 1 }
 }
 
@@ -40,7 +35,7 @@ html,body{height:100%}
 html{ background: var(--bg) }
 
 body{
-  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;
   background: transparent;
   color:var(--text);
   line-height:1.6;
@@ -56,7 +51,7 @@ body{
 a{ color:var(--accent); text-decoration:none; transition: color .2s }
 a:hover{ color:var(--accent2) }
 
-/* ─── Silk background ─── */
+/* Silk background */
 #silk-bg{
   position: fixed;
   inset: 0;
@@ -67,7 +62,7 @@ a:hover{ color:var(--accent2) }
   opacity: .35;
 }
 
-/* ─── Layout ─── */
+/* Layout */
 .layout{
   max-width:1100px;
   margin:0 auto;
@@ -90,7 +85,7 @@ a:hover{ color:var(--accent2) }
   .sidebarInner{position:relative; height:auto}
 }
 
-/* ─── Sidebar ─── */
+/* Sidebar */
 .sidebar{ position:relative }
 
 .sidebarInner{
@@ -145,8 +140,8 @@ a:hover{ color:var(--accent2) }
 .name{
   margin:20px 0 0;
   font-size:26px;
-  font-weight:800;
-  letter-spacing:-0.03em;
+  font-weight:700;
+  letter-spacing:-0.02em;
   color: var(--text);
 }
 
@@ -155,7 +150,7 @@ a:hover{ color:var(--accent2) }
   font-size:13px;
   font-weight:500;
   color: var(--accent);
-  letter-spacing:0.02em;
+  letter-spacing:0.01em;
 }
 
 .bio{
@@ -188,13 +183,8 @@ a:hover{ color:var(--accent2) }
   transform: translateX(4px);
 }
 
-.infoItem a{
-  color: var(--text2);
-}
-
-.infoItem:hover a{
-  color: var(--accent);
-}
+.infoItem a{ color: var(--text2) }
+.infoItem:hover a{ color: var(--accent) }
 
 .icon{
   width:18px;
@@ -212,7 +202,7 @@ a:hover{ color:var(--accent2) }
   opacity:.7;
 }
 
-/* ─── Main content ─── */
+/* Main content */
 .content{
   padding:0;
   display:flex;
@@ -220,7 +210,7 @@ a:hover{ color:var(--accent2) }
   gap:20px;
 }
 
-/* ─── Section label ─── */
+/* Section label */
 .sectionLabel{
   display:inline-flex;
   align-items:center;
@@ -241,7 +231,7 @@ a:hover{ color:var(--accent2) }
   border-radius:2px;
 }
 
-/* ─── Cards ─── */
+/* Cards */
 .card{
   background:var(--surface);
   border:1px solid var(--border);
@@ -261,14 +251,14 @@ a:hover{ color:var(--accent2) }
 h2{
   margin:0 0 18px;
   font-size:22px;
-  font-weight:800;
-  letter-spacing:-0.03em;
+  font-weight:700;
+  letter-spacing:-0.02em;
   color:var(--text);
 }
 
 h3{
   font-size:16px;
-  font-weight:700;
+  font-weight:600;
   color:var(--text);
 }
 
@@ -280,7 +270,7 @@ p{
 
 p + p{ margin-top:14px }
 
-/* ─── Experience items ─── */
+/* Experience items */
 .item{
   border-radius:var(--r);
   padding:22px;
@@ -320,7 +310,7 @@ p + p{ margin-top:14px }
   border-radius: 6px;
 }
 
-/* ─── Buttons ─── */
+/* Buttons */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -334,6 +324,7 @@ p + p{ margin-top:14px }
   color:var(--text2);
   transition: all .25s ease;
   cursor:pointer;
+  font-family: inherit;
 }
 
 .btn:hover{
@@ -370,7 +361,7 @@ p + p{ margin-top:14px }
   transform: translateX(3px);
 }
 
-/* ─── Projects grid ─── */
+/* Projects grid */
 .grid3{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
@@ -453,6 +444,7 @@ p + p{ margin-top:14px }
   background: rgba(16,185,129,.06);
   color: var(--accent);
   transition: all .25s ease;
+  font-family: inherit;
 }
 
 .textLink:hover{
@@ -461,7 +453,26 @@ p + p{ margin-top:14px }
   color: var(--accent);
 }
 
-/* ─── Contact ─── */
+/* Company card */
+.companyHeader{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.companyName{
+  font-size:18px;
+  font-weight:700;
+  color: var(--text);
+}
+
+.companyDesc{
+  color: var(--muted);
+  font-size:13px;
+}
+
+/* Contact */
 .contactGrid{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
@@ -504,7 +515,7 @@ p + p{ margin-top:14px }
   color: var(--text);
 }
 
-/* ─── Footer ─── */
+/* Footer */
 .footer{
   color:var(--muted);
   padding:24px 0 40px;
@@ -512,7 +523,7 @@ p + p{ margin-top:14px }
   text-align:center;
 }
 
-/* ─── Welcome card ─── */
+/* Welcome card */
 .welcomeCard{
   text-align: center;
   padding: 44px 28px;
@@ -522,8 +533,8 @@ p + p{ margin-top:14px }
 
 .welcomeText{
   font-size: 44px;
-  font-weight: 900;
-  letter-spacing: -0.04em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   background: linear-gradient(90deg, var(--text), var(--accent), var(--accent2), var(--text));
   background-size: 200% auto;
   animation: shimmer 4s linear infinite;
@@ -538,13 +549,13 @@ p + p{ margin-top:14px }
   transform: translateY(30px);
 }
 
-/* ─── Magnet ─── */
+/* Magnet */
 .magnet{
   position: relative;
   display: inline-block;
 }
 
-/* ─── Stats ─── */
+/* Stats */
 .statsGrid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -584,8 +595,8 @@ p + p{ margin-top:14px }
   align-items: baseline;
   gap: 6px;
   font-size: 44px;
-  font-weight: 900;
-  letter-spacing: -0.04em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   line-height: 1;
   color: var(--text);
 }
@@ -596,7 +607,7 @@ p + p{ margin-top:14px }
   font-weight: 600;
 }
 
-/* ─── Scroll reveal ─── */
+/* Scroll reveal */
 .reveal{
   opacity: 0;
   transform: translateY(28px);
@@ -613,13 +624,13 @@ p + p{ margin-top:14px }
 .reveal:nth-child(4){ transition-delay: .24s }
 .reveal:nth-child(5){ transition-delay: .32s }
 
-/* ─── Scrollbar ─── */
+/* Scrollbar */
 ::-webkit-scrollbar{ width:5px }
 ::-webkit-scrollbar-track{ background:transparent }
 ::-webkit-scrollbar-thumb{ background:rgba(255,255,255,.08); border-radius:999px }
 ::-webkit-scrollbar-thumb:hover{ background:rgba(255,255,255,.15) }
 
-/* ─── Hero (kept for subpages) ─── */
+/* Subpage hero kept */
 .heroRow{ display:grid; grid-template-columns:1.2fr .8fr; gap:18px; align-items:center }
 @media(max-width:900px){ .heroRow{grid-template-columns:1fr} }
 .heroTitle{ margin:0; font-size:34px }
