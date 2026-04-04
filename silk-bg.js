@@ -120,22 +120,25 @@ requestAnimationFrame(animate);
 const textEl = document.getElementById('welcome-text');
 
 if (textEl) {
-  const text = textEl.textContent;
+  const lines = [
+    'Hey, I\'m Julius.',
+    'I build things.',
+    'Welcome to my corner.',
+    'Nice to see you here.',
+    'Let\'s build something.',
+  ];
+  const picked = lines[Math.floor(Math.random() * lines.length)];
+  let i = 0;
   textEl.textContent = '';
+  textEl.style.opacity = 1;
+  textEl.style.minHeight = '1.2em';
 
-  [...text].forEach((char, index) => {
-    const span = document.createElement('span');
-    span.textContent = char === ' ' ? '\u00A0' : char;
-    span.style.transition = 'opacity 1.25s ease, transform 1.25s ease';
-    span.style.transitionDelay = `${index * 50}ms`;
-    textEl.appendChild(span);
-  });
-
-  requestAnimationFrame(() => {
-    const spans = textEl.querySelectorAll('span');
-    spans.forEach(span => {
-      span.style.opacity = 1;
-      span.style.transform = 'translateY(0)';
-    });
-  });
+  function type() {
+    if (i <= picked.length) {
+      textEl.textContent = picked.slice(0, i);
+      i++;
+      setTimeout(type, 55 + Math.random() * 40);
+    }
+  }
+  setTimeout(type, 400);
 }

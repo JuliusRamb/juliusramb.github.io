@@ -543,10 +543,14 @@ p + p{ margin-top:14px }
   background-clip: text;
 }
 
-.welcomeText span{
+.welcomeText .cursor{
   display: inline-block;
-  opacity: 0;
-  transform: translateY(30px);
+  width: 2px;
+  height: .9em;
+  background: var(--accent);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: pulse 1s step-end infinite;
 }
 
 /* Magnet */
